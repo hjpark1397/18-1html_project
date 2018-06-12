@@ -1,96 +1,43 @@
 <!DOCTYPE html>
-
+<html>
 <head>
 	<meta charset="UTF-8">
 	<title>숨은 강아지 찾기 게임</title>
-	<script>
-		function check(no) {//답을 골랐을 경우 메세지를 출력함
-			if (q[no] == 0) {
-				alert("꽝");
-			}
-			else {
-				alert("GOOD!");
-			}
-		}
-	</script>
+	<script src="game.js"></script>
 </head>
 
 <body>
-	<script>
-
-     	<div id="div_q"></div>
-		//게임시작을 누르면 버튼을 숨기고 타이머가 가도록 한다. 그리고 동시에 게임을 진행하고 클릭 횟수를 변수로 잡아준다.
-		//클릭 횟수에 대한 변수. 클릭하면 남은 갯수가 줄도록 하고 다른 이미지를 출력하도록 한다. 틀린갯수 다섯개를 초과하면 정답 출력 후 리셋한다.
-		var total = 24;//문제갯수
-		var a = 8;//정답갯수
-		var q = new Array();//정답 배열 생성
-
-		var tmp_a = 0;//정답 분류용
-		var tmp_i;//정답 분류용
-
-		var randomChords = "";//?
-		var length = 0;//?
-
-		//배열변수 초기화
-		for (var i = 0; i < total; i++) {
-			q[i] = 0;
-		}
-
-		//정답 생성
-		while (tmp_a < a) {
-			tmp_i = Math.floor(Math.random() * total);//랜덤함수로 난수 발생
-
-			if (q[tmp_i] == 0) {
-				q[tmp_i] = 1;  
-
-				tmp_a++;
-			}
-		}
-
-		var str = "asd";//출력용
-
-		//문제 그리기
-		for (var i = 0; i < total; i++) {
-			str = str + "<a href='javascript:check( " + i + " );'>" + i + "</a><br>";
-		}
-
-		document.getElementById("div_q").innerHTML = str;//HTML에 집어넣는다.
-
-		console.log(q);
-
-	</script>
-
 	<h3>숨은 강아지 찾기 게임</h3>
 	<hr>
-	<button type="button">게임시작</button>
+	<button type="button" onclick="StartGame()">게임시작</button>
 	<br>
 	<p>
-	<img src="egg.png" width="150" id="q[0]" onclick="check(this.id)">
-	<img src="egg.png" width="150" id="1">
-	<img src="egg.png" width="150" id="2">
-	<img src="egg.png" width="150" id="3">
-	<img src="egg.png" width="150" id="4">
-	<img src="egg.png" width="150" id="5">
-	<img src="egg.png" width="150" id="6">
-	<img src="egg.png" width="150" id="7">
+	<img src="egg.png" width="150" id="0" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="1" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="2" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="3" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="4" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="5" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="6" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="7" onclick="check(this.id)">
 	<br>
-	<img src="egg.png" width="150" id="8">
-	<img src="egg.png" width="150" id="9">
-	<img src="egg.png" width="150" id="10">
-	<img src="egg.png" width="150" id="11">
-	<img src="egg.png" width="150" id="12">
-	<img src="egg.png" width="150" id="13">
-	<img src="egg.png" width="150" id="14">
-	<img src="egg.png" width="150" id="15">
+	<img src="egg.png" width="150" id="8" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="9" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="10" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="11" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="12" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="13" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="14" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="15" onclick="check(this.id)">
 	<br>
-	<img src="egg.png" width="150" id="16">
-	<img src="egg.png" width="150" id="17">
-	<img src="egg.png" width="150" id="18">
-	<img src="egg.png" width="150" id="19">
-	<img src="egg.png" width="150" id="20">
-	<img src="egg.png" width="150" id="21">
-	<img src="egg.png" width="150" id="22">
-	<img src="egg.png" width="150" id="23">
+	<img src="egg.png" width="150" id="16" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="17" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="18" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="19" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="20" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="21" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="22" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="23" onclick="check(this.id)">
 	<br>
 	</p>
 
