@@ -1,1 +1,40 @@
+body{
+    background-color: paleturquoise;
+}
 
+h3{
+    text-align: center;
+    color : gray; font : bold 40px verdana;
+}
+
+h4{
+    padding: 5px;
+    margin: 5px;
+    background-color: darksalmon;
+}
+
+#Game_Box{
+    float: left;
+    padding: 5px;
+    margin: 5px;
+    background-color: royalblue;
+}
+
+#ExtraAnswer, #FailNumber, #MessageBox, #ExtraTime{
+    background-color: darksalmon;
+    padding: 5px;
+    margin: 5px;
+    text-align: left;
+}
+
+#GameOver{
+	left : 360px; top : 270px;
+	width : 600px; height : 100px; 
+	text-align : center;
+	color : red; font : bold 100px verdana;
+}
+
+#GGGame{
+    float: left;
+    background-color: goldenrod;
+}

@@ -11,11 +11,13 @@
 
 <body>
 	<h3>숨은 병아리 찾기 게임</h3>
+	<audio src="If_I_Had_a_Chicken.mp3" autoplay controls loop></audio>
 	<hr><br>
-	<button type="button" onclick="StartGame()">게임시작</button>
+
 	
 	<div id="Game_Box">
-		<div id="ExtraAnswer">남은 수 : 7</div>
+		<h4 id="button" onclick="StartGame()">게임시작</h4><br>
+		<div id="ExtraAnswer">남은 수 : 8</div>
 		<div id="FailNumber">실패 수 : 0</div>
 		<div id="ExtraTime">남은 시간 : 20</div>
 		<div id="MessageBox">게임 진행 예정</div>
@@ -23,6 +25,7 @@
 	<!--게임박스 끝나는 부분-->
 	</div>
 
+	<div id="GGGame">
 	<br>
 	<img src="egg.png" width="150" id="0" onclick="check(this.id)">
 	<img src="egg.png" width="150" id="1" onclick="check(this.id)">
@@ -52,6 +55,9 @@
 	<img src="egg.png" width="150" id="23" onclick="check(this.id)">
 	<br>
 	</p>
+	<!--게임 이미지 박스 끝나는 부분-->
+</div>
+	<div id="GameOver" onClick="window.location.reload()"></div>
 </body>
 
 </html>
