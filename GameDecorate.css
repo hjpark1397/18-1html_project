@@ -34,6 +34,13 @@ h4{
 	color : red; font : bold 100px verdana;
 }
 
+#GameClear{
+    left : 360px; top : 270px;
+	width : 600px; height : 100px; 
+	text-align : center;
+	color : red; font : bold 100px verdana;
+}
+
 #GGGame{
     float: left;
     background-color: goldenrod;

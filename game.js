@@ -16,15 +16,12 @@ var randomChords = "";
 var length = 0;//
 var count = 0;//클릭 횟수
 var ExtraChance = 0;//남은 기회
-var status=true;
 
 function StartGame(){//게임시작 버튼 전체적인 흐름 제어
     alert("게임 시작!");//게임을 시작함을 알림
     disappear();//버튼을 사라지게 함
     Timer(10,20);//5초 기다려!(예시..)
     outputanswer();//병아리가 있는 곳을 보여줌
-    CorrectAnswer();//답을 보여주는거야...
-    Out_put_message(); // 메시지 출력
 }
 
 function appear(){
@@ -83,20 +80,21 @@ function Out_put_message(){ // 계란을 보라는 메시지를 출력해줄 것
             sound(no);// 오디오 넣고 나서 주석 풀어줘
             }
             else{ // 다 틀렸을경우
-                status = false;
                 //ClearInterval 이용해서 타이머를 정지시켜 준다.
                 outputanswer();//정답화면 보여주기
-                //게임종료 메세지 띄우기
-                //게임 초기화
             }
         }
             //sound(no); 오디오 넣고 나서 주석 풀어줘
         else {
+            if(restNum > 0){
             CorrectAnswer();// 남은 수를 줄여줄 곳
             var image = document.getElementById(no);
             image.src = "chick.png"; // 병아리 보여줄 것
             restNum--;//남은 병아리 수를 감소시켜줌
             sound(no);// 오디오 넣고 나서 주석 풀어줘
+            }
+            else
+            GameClear();
         }
     }
 
@@ -128,16 +126,24 @@ function Timer(n, N){ // 타이머 n == 기억하는시간 N == 맞추는시간
     function Out_put_time(){ // 남은 시간 계속해서 출력
         n--;
         if(n <= 0 ){ // 남은시간 0초
+            if(N!=0){
            document.getElementById("ExtraTime").innerHTML="남은 시간 : 0";
             clearInterval(stop); // 반복문 종료
-            Timer(N, null);//재귀함수
+            Timer(N, null);
             see_egg();//계란을 다 뒤집음
+            }
+            else
+                Gameover();
         }
         else if(MAXTRY==0){
             document.getElementById("ExtraTime").innerHTML="남은 시간 : 0";//실패횟수가 0
             clearInterval(stop); // 반복문 종료
             outputanswer();
             Gameover();
+        }
+        else if(restNum==0){//남은 병아리 수가 0
+            clearInterval(stop); // 반복문 종료
+            GameClear();
         }
         else{ // 나머지는 1초마다 계속해서 함수 실행
             document.getElementById("ExtraTime").innerHTML="남은 시간 : " + n +" ";
@@ -147,6 +153,9 @@ function Timer(n, N){ // 타이머 n == 기억하는시간 N == 맞추는시간
 
 function Gameover(){
     document.getElementById("GameOver").innerHTML="<h5>Game Over</h5>";
+}
+function GameClear(){
+    document.getElementById("GameClear").innerHTML="<h5>Game Clear</h5>";
 }
 
 function sound(no){//소리 출력
