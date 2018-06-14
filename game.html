@@ -13,9 +13,18 @@
 	<h3>숨은 병아리 찾기 게임</h3>
 	<hr><br>
 	<button type="button" onclick="StartGame()">게임시작</button>
+	
+	<div id="Game_Box">
+		<div id="ExtraAnswer">남은 수 : 7</div>
+		<div id="FailNumber">실패 수 : 0</div>
+		<div id="ExtraTime">남은 시간 : 20</div>
+		<div id="MessageBox">게임 진행 예정</div>
+
+	<!--게임박스 끝나는 부분-->
+	</div>
+
 	<br>
-	<p>
-				<img src="egg.png" width="150" id="0" onclick="check(this.id)">
+	<img src="egg.png" width="150" id="0" onclick="check(this.id)">
 	<img src="egg.png" width="150" id="1" onclick="check(this.id)">
 	<img src="egg.png" width="150" id="2" onclick="check(this.id)">
 	<img src="egg.png" width="150" id="3" onclick="check(this.id)">
